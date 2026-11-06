@@ -53,10 +53,11 @@ When the site is hosted, Cloudflare processes ordinary visit data, including IP 
 
 ## Limitations
 
-- Tested in Chrome, plus Playwright's Firefox and WebKit builds. Letter and A4 PDFs were generated in Chrome, and fit was measured in the other two. It hasn't been tested on a physical printer, in Safari itself, or printing from a phone.
+- Tested in Chrome, plus Playwright's Firefox and WebKit builds. Letter and A4 PDFs were generated in Chrome with margins up to 1 inch, and fit was measured in the other two. Printing from a phone has been checked by hand and stays on one sheet. Other phones and browsers may behave differently.
 - The legal wording has had an AI review but not a lawyer's review.
 - Nothing is saved, so changing the list means filling it out again.
 - Long entries shrink to fit their lines, and each field has a character limit so text doesn't get cut off.
+- The "Written" date comes from the device's clock when the page loads, and it can be edited.
 
 ## Editing
 
