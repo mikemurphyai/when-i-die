@@ -26,6 +26,7 @@
   }
 
   * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body {
     margin: 0;
     background: var(--color-bg-page);
@@ -247,6 +248,17 @@
     .sheet { width: auto; margin: 0; padding: 0; border: 0; box-shadow: none; border-radius: 0; }
     input::placeholder, textarea::placeholder { color: transparent; }
     section, .pen { break-inside: avoid; }
+    /* Phones add bigger margins than computers, so leave plenty of room. */
+    section { margin-top: 9px; }
+    .masthead h2 { font-size: 30px; }
+    .masthead .sub { margin-top: 4px; }
+    .note { margin-top: 6px; }
+    .row { min-height: 24px; }
+    .pen { padding: 3px 12px 8px; }
+    .pen .row { min-height: 27px; }
+    .callout { margin-top: 5px; padding: 4px 10px; }
+    textarea { height: 40px; line-height: 20px; background-size: 100% 20px; background-image: linear-gradient(transparent 19px, var(--color-border-default) 19px); }
+    .foot { margin-top: 7px; padding-top: 0; font-size: 11px; line-height: 1.3; }
     :focus, :focus-visible { outline: none !important; }
   }
 </style>
@@ -287,7 +299,8 @@
   <div class="credit">
     <p class="online-only">Blank PDF: <a href="when-i-die-list-letter.pdf" target="_blank" rel="noopener">US Letter</a> &middot; <a href="when-i-die-list-a4.pdf" target="_blank" rel="noopener">A4</a></p>
     <p class="online-only"><a href="index.html" download="when-i-die-list.html">Save this form to use offline</a></p>
-    <p>Made by <a href="https://mikemurphy.ai" target="_blank" rel="noopener noreferrer">Mike Murphy</a>. Free to copy, change, and share (<a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a>).</p>
+    <p>Free to copy, change, and share (<a href="https://creativecommons.org/publicdomain/zero/1.0/" target="_blank" rel="noopener noreferrer">CC0</a>).</p>
+    <p>Made by <a href="https://mikemurphy.ai" target="_blank" rel="noopener noreferrer">Mike Murphy</a></p>
   </div>
 </header>
 
@@ -298,52 +311,52 @@
       <p class="sub">What you'll need in the first 48 hours.</p>
     </div>
     <div class="signed">
-      <div class="row"><label for="name">From</label><input id="name" maxlength="40" autocomplete="off"></div>
-      <div class="row"><label for="date">Written</label><input id="date" maxlength="40" autocomplete="off"></div>
+      <div class="row"><label for="name">From</label><input id="name" maxlength="32" autocomplete="off"></div>
+      <div class="row"><label for="date">Written</label><input id="date" maxlength="32" autocomplete="off"></div>
     </div>
   </div>
   <p class="note">To my friends and family: Start at the top. Use this the same way if I'm alive but can't speak for myself.</p>
 
   <section>
     <h3>1. First</h3>
-    <div class="row"><label for="call1">Call these people first</label><input id="call1" aria-label="First person to call, name" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="First person to call, phone" placeholder="Phone" autocomplete="off"></div>
-    <div class="row"><span></span><input aria-label="Second person to call, name" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="Second person to call, phone" placeholder="Phone" autocomplete="off"></div>
-    <div class="row tall"><label for="depends">Who depends on me</label><textarea id="depends" rows="2" maxlength="240" placeholder="Kids, pets, anyone I care for, and what they need" autocomplete="off"></textarea></div>
-    <div class="row"><label for="stepin">Who can step in</label><input id="stepin" maxlength="120" placeholder="Name and phone" autocomplete="off"></div>
+    <div class="row"><label for="call1">Call these people first</label><input id="call1" aria-label="First person to call, name" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="First person to call, phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row"><span></span><input aria-label="Second person to call, name" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="Second person to call, phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row tall"><label for="depends">Who depends on me</label><textarea id="depends" rows="2" maxlength="190" placeholder="Kids, pets, anyone I care for, and what they need" autocomplete="off"></textarea></div>
+    <div class="row"><label for="stepin">Who can step in</label><input id="stepin" maxlength="95" placeholder="Name and phone" autocomplete="off"></div>
     <p class="callout">Don't cancel my phone plan yet. Login codes may still come to my number.</p>
   </section>
 
   <section>
     <h3>2. Getting in <small class="no-print">Best written in pen after printing, but you can type them</small></h3>
     <div class="pen">
-      <div class="row"><label for="pass-phone">Phone passcode</label><input id="pass-phone" maxlength="90" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
-      <div class="row"><label for="pass-computer">Computer password</label><input id="pass-computer" maxlength="90" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
-      <div class="row"><label for="pass-tablet">Tablet passcode</label><input id="pass-tablet" maxlength="90" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
-      <div class="row"><label for="pass-where">My passwords are in</label><input id="pass-where" maxlength="90" placeholder="An app like 1Password, a notebook, my browser" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
-      <div class="row"><label for="pass-open">Password to open that</label><input id="pass-open" maxlength="90" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
-      <div class="row"><label for="pass-safe">Safe or lockbox combination</label><input id="pass-safe" maxlength="90" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-phone">Phone passcode</label><input id="pass-phone" maxlength="80" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-computer">Computer password</label><input id="pass-computer" maxlength="80" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-tablet">Tablet passcode</label><input id="pass-tablet" maxlength="80" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-where">My passwords are in</label><input id="pass-where" maxlength="80" placeholder="An app like 1Password, a notebook, my browser" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-open">Password to open that</label><input id="pass-open" maxlength="80" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
+      <div class="row"><label for="pass-safe">Safe or lockbox combination</label><input id="pass-safe" maxlength="80" autocomplete="off" autocapitalize="off" autocorrect="off" data-1p-ignore data-lpignore="true"></div>
     </div>
   </section>
 
   <section>
     <h3>3. Where things are</h3>
-    <div class="row"><label for="keys">House and car keys</label><input id="keys" maxlength="120" placeholder="Where the spares are" autocomplete="off"></div>
-    <div class="row"><label for="mail">Mailbox key</label><input id="mail" maxlength="120" placeholder="Where it is, and which box" autocomplete="off"></div>
-    <div class="row"><label for="safe">Safe or lockbox</label><input id="safe" maxlength="120" placeholder="Where it is, and where its key is" autocomplete="off"></div>
-    <div class="row"><label for="papers">Will and important papers</label><input id="papers" maxlength="120" placeholder="Where they are" autocomplete="off"></div>
+    <div class="row"><label for="keys">House and car keys</label><input id="keys" maxlength="95" placeholder="Where the spares are" autocomplete="off"></div>
+    <div class="row"><label for="mail">Mailbox key</label><input id="mail" maxlength="95" placeholder="Where it is, and which box" autocomplete="off"></div>
+    <div class="row"><label for="safe">Safe or lockbox</label><input id="safe" maxlength="95" placeholder="Where it is, and where its key is" autocomplete="off"></div>
+    <div class="row"><label for="papers">Will and important papers</label><input id="papers" maxlength="95" placeholder="Where they are" autocomplete="off"></div>
   </section>
 
   <section>
     <h3>4. Who to call next</h3>
-    <div class="row"><label for="boss">My work (boss)</label><input id="boss" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="Boss phone" placeholder="Phone" autocomplete="off"></div>
-    <div class="row"><label for="doctor">Doctor</label><input id="doctor" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="Doctor phone" placeholder="Phone" autocomplete="off"></div>
-    <div class="row"><label for="lawyer">Lawyer</label><input id="lawyer" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="Lawyer phone" placeholder="Phone" autocomplete="off"></div>
-    <div class="row"><label for="acct">Accountant</label><input id="acct" placeholder="Name" maxlength="85" autocomplete="off"><input class="phone" maxlength="30" aria-label="Accountant phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row"><label for="boss">My work (boss)</label><input id="boss" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="Boss phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row"><label for="doctor">Doctor</label><input id="doctor" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="Doctor phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row"><label for="lawyer">Lawyer</label><input id="lawyer" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="Lawyer phone" placeholder="Phone" autocomplete="off"></div>
+    <div class="row"><label for="acct">Accountant</label><input id="acct" placeholder="Name" maxlength="65" autocomplete="off"><input class="phone" maxlength="26" aria-label="Accountant phone" placeholder="Phone" autocomplete="off"></div>
   </section>
 
   <section>
     <h3>5. Anything else only I know</h3>
-    <textarea aria-label="Anything else only I know" rows="2" maxlength="320" placeholder="What would go wrong this week if nobody knew about it?" autocomplete="off"></textarea>
+    <textarea aria-label="Anything else only I know" rows="2" maxlength="260" placeholder="What would go wrong this week if nobody knew about it?" autocomplete="off"></textarea>
   </section>
 
   <p class="foot">Private: this sheet has my passcodes on it. If you found it and I'm fine, please seal it back up. This isn't a will. It doesn't give anyone legal authority over my devices, accounts, or medical or financial decisions. Please leave bank and other financial accounts to my executor.</p>
@@ -366,12 +379,34 @@
 
   dateField.value = new Date().toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' });
 
-  // Printed fields cut off long text, so shrink it to fit. The maxlength on
-  // each field is the most that still fits at the 8px floor.
+  // Printed fields cut off long text, so shrink it to fit. A field can be wider
+  // on a phone's screen than on paper, so inputs are also measured against their
+  // narrowest printed width. The maxlength on each field is the most that still
+  // fits at the 8px floor.
+  var measure = document.createElement('canvas').getContext('2d');
+
+  function printedWidth(el) {
+    if (el.tagName === 'TEXTAREA') return el.id === 'depends' ? 420 : 590;
+    if (el.classList.contains('phone')) return 120;
+    if (el.closest('.signed')) return 145;
+    if (el.closest('.pen')) return 385;
+    var next = el.nextElementSibling;
+    if (next && next.classList.contains('phone')) return 265;
+    return 420;
+  }
+
+  function tooWideOnPaper(el, size) {
+    var style = getComputedStyle(el);
+    measure.font = style.fontWeight + ' ' + size + 'px ' + style.fontFamily;
+    // Textareas have two lines, less some room lost to word wrapping.
+    var room = el.tagName === 'TEXTAREA' ? printedWidth(el) * 1.75 : printedWidth(el);
+    return measure.measureText(el.value).width > room;
+  }
+
   function fit(el) {
     el.style.fontSize = '';
     var size = parseFloat(getComputedStyle(el).fontSize);
-    while ((el.scrollWidth > el.clientWidth || el.scrollHeight > el.clientHeight) && size > 8) {
+    while ((el.scrollWidth > el.clientWidth || el.scrollHeight > el.clientHeight || tooWideOnPaper(el, size)) && size > 8) {
       size -= 0.5;
       el.style.fontSize = size + 'px';
     }
