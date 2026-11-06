@@ -70,11 +70,11 @@ There's no build step, so edit `index.html` directly and refresh your browser.
 
 ## Hosting
 
-The planned home is `whenidielist.com` on Cloudflare Pages. It isn't live yet.
+The site is live at [whenidielist.com](https://whenidielist.com), hosted as a static-assets Cloudflare Worker named `when-i-die`. Pushing to `main` deploys it. There's no build command.
 
-The site needs no build. In Cloudflare Pages, connect this repository, leave the build command empty, and set the output directory to the repository root. Cloudflare applies the security headers in `_headers` automatically.
+Cloudflare applies the security headers in `_headers` automatically. The `no-transform` value in `Cache-Control` tells Cloudflare not to alter the page, including adding its analytics script.
 
-Leave Cloudflare's Web Analytics and Rocket Loader off for this site. They add or rewrite scripts, and the page's security policy is meant to block anything like that.
+Leave Web Analytics and Rocket Loader off for this site, and keep Always Use HTTPS on.
 
 ## License
 
