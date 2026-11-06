@@ -23,7 +23,7 @@ You need a browser and a printer. There's nothing to install and no account to c
 1. Download or clone this repository.
 2. Open `index.html` in your browser. Double-clicking the file works.
 3. Fill in what you know and skip the rest.
-4. Choose **Print what I filled in** or **Print blank form**.
+4. Choose **Print what you typed** or **Print blank form**.
 5. Seal the printout in an envelope and tell two people where it is.
 
 To confirm it's working, open your browser's print preview. You should see one sheet, without the instructions or buttons.
